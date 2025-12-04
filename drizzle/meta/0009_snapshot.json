@@ -1,6 +1,6 @@
 {
-  "id": "71124ee8-8063-4ce7-85a2-c961c40c547b",
-  "prevId": "085b6a88-ba01-443f-8ff6-292f8565a656",
+  "id": "e39072ee-565e-4c83-9f64-0d18fe25d395",
+  "prevId": "01cade58-4544-4741-8448-b5f8846ff0db",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -154,6 +154,20 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true
+        },
+        "password": {
+          "name": "password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "user_role",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'student'"
         }
       },
       "indexes": {},
@@ -173,7 +187,16 @@
       "isRLSEnabled": false
     }
   },
-  "enums": {},
+  "enums": {
+    "public.user_role": {
+      "name": "user_role",
+      "schema": "public",
+      "values": [
+        "student",
+        "manager"
+      ]
+    }
+  },
   "schemas": {},
   "sequences": {},
   "roles": {},
